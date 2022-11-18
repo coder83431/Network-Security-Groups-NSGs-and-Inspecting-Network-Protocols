@@ -177,5 +177,5 @@ Exit the SSH connection by typing ‘exit’ and pressing [Enter].
 18.Observe the immediate non-stop spam of traffic. This traffic seems to be nonstop because the RDP (protocol) is constantly showing you a live stream from one computer to another, therefor traffic is always being transmitted
 
 
-20. Close your Remote Desktop and delete your resource group and all others resources used in the lab.
+19. Close your Remote Desktop and delete your resource group and all others resources used in the lab.
 
