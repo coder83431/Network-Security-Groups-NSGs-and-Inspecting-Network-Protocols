@@ -134,22 +134,29 @@ This tutorial outlines the process of creating resource groups,virtual networks,
 
 11. Back in Wireshark, filter for SSH traffic only
 
+
+<p>
+<img src="https://imgur.com/kODyfJQ.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+
 12. From your Windows 10 VM, “SSH into” your Ubuntu Virtual Machine (via its private IP address)
 Type commands (ls, pwd, etc) into the linux SSH connection and observe SSH traffic spam in WireShark
 Exit the SSH connection by typing ‘exit’ and pressing [Enter].
 
 -SSH traffic commands to try out: pw,ls.
 
+<p>
+<img src="https://imgur.com/8RzNxG4.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
 
 13. Back in Wireshark, filter for DHCP traffic only. Observe the DHCP traffic appearing in Wireshark.
 
-14. From your Windows 10 VM, attempt to issue your VM a new IP address from the command line (ipconfig /renew). Observe the DHCP traffic appearing in Wireshark.
+14. From your Windows 10 VM, attempt to issue your VM a new IP address from the command line (ipconfig/renew). Observe the DHCP traffic appearing in Wireshark.
 
 
 
 <p>
-<img src="https://imgur.com/SuPhxqh.png
-" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://imgur.com/SuPhxqh.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 
 
@@ -159,15 +166,16 @@ Exit the SSH connection by typing ‘exit’ and pressing [Enter].
 16. From your Windows 10 VM within a command line, use nslookup to see what google.com and disney.com’s IP addresses are
 
 
+
+<p>
+<img src="https://imgur.com/ym4QKCZ.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+
 17.Back in Wireshark, filter for RDP traffic only (tcp.port == 3389)
 
 
-18.Oserve the immediate non-stop spam of traffic. This traffic seems to be nonstop because the RDP (protocol) is constantly showing you a live stream from one computer to another, therefor traffic is always being transmitted
+18.Observe the immediate non-stop spam of traffic. This traffic seems to be nonstop because the RDP (protocol) is constantly showing you a live stream from one computer to another, therefor traffic is always being transmitted
 
 
-
-19.Close your Remote Desktop connection
-
-
-20. Delete your resource group and all others resources used in the lab.
+20. Close your Remote Desktop and delete your resource group and all others resources used in the lab.
 
