@@ -1,128 +1,173 @@
 <p align="center">
-<img src="https://i.imgur.com/Clzj7Xs.png" alt="osTicket logo"/>
+<img src="https://imgur.com/3HXimZR.png"/>
 </p>
 
-<h1>osTicket - Prerequisites and Installation </h1>
-This tutorial outlines the prerequisites and installation of the open-source help desk ticketing system osTicket.<br />
+<h1>osTicket - Azure Compute and Networking </h1>
+This tutorial outlines the process of creating resource groups,virtual networks, network security groups, and subnets in Azure. <br />
 
 
 <h2>Environments and Technologies Used</h2>
 
-- Microsoft Azure (Virtual Machines/Compute)
+- Microsoft Azure (Virtual Machines)
 - Remote Desktop
-- Internet Information Services (IIS)
+- Azure Network Security Groups
+-Wireshark
 
 <h2>Operating Systems Used </h2>
 
 - Windows 10</b> (version 22H2)
-
-<h2>List of Prerequisites</h2>
-
-- Microsoft Web Platform Installer
-- OsTicket V1.15.8
-- HeidiSQL
+-Windows and Linux (Ubuntu) for Azure Virtual Machines.
+-Wireshark
 
 <h2>Installation Steps</h2>
 
 
 <p>  
-<img src = "https://i.imgur.com/FoDQra2.png" " height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src = "https://imgur.com/XwWlhWr.png " height="80%" width="80%" alt="Disk Sanitization Steps"/>
 
 </p>
 
 <p>Overview</p>
 
 <p>
-<img src = "https://i.imgur.com/GFYFR0R.png" " height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src = "https://imgur.com/mCtRKHz.png" " height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
  <p>
-1. Create a resource group in Azure.
-</p>                                                                                                    
+1. Create a resource group in Azure. Mine is called "network-group".
+</p>                                                                                                 
                                                                                                      
 <p>
-<img src= "https://i.imgur.com/Pk3J6Rk.png" " height="80%" width="80%" alt="Disk Sanitization Steps" />
+<img src= "https://imgur.com/SKRHp7D.png" " height="80%" width="80%" alt="Disk Sanitization Steps" />
 </p>
 
 <p>
                                                                                                  
                                                                                                  
                                                                                                  
-2. Create a virtual machine within Azure.
+2. Create a Windows 10 Virtual Machine (VM). This virtual machine will be connected to the resource group we previously created.
+
 </p>
 <br />
 
 <p>
-<img src="https://i.imgur.com/dDY9AQi.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://imgur.com/xGqRr8p.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
+
 <p>
-3. Open Remote Desktop.
+3.Create a Linux Ubuntu VM. While creating the VM, select the previously created resource group and vnet.
+
+
+<p>
+<img src="https://imgur.com/xGqRr8p.png
+" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+
+
 </p>
 <br />
 
 <p>
-<img src="https://i.imgur.com/PB1vmBe.png" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://imgur.com/47CBowj.png" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-4. Install/ Enable IIS (Internet Information Services). Windows Control Pannel < Programs and Feautures
+4. Observe the network you created within Network Watcher
 </p>
 <br />
 
 <p>
-<img src="https://i.imgur.com/yt4ZPAk.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://imgur.com/PSMZPGv.png" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-5. Install "Microsoft Web Platform Installer".
-      - Add "MySQL 5.5"
-      - Add All Simple Versions Of X86PHP Up Until 7.3
+5. Use Remote Desktop to connect to your Windows 10 Virtual Machine
+
 </p>
 <br />
 
 <p>
-<img src="https://i.imgur.com/8ob8uQq.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://imgur.com/ftWznpL.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-6. Install osTicket v1.15.8.
+6.Within your Windows 10 Virtual Machine, Install Wireshark
+
 </p>
 <br />
 
 <p>
-<img src="https://i.imgur.com/SbhSS6V.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://imgur.com/YS2MA3u.png" alt="Disk Sanitization Steps"/>
 </p>
-<p>
-7. Go Back To IIS, Sites->Default->osTicket, Double click PHP Manager, Enable PHP_imap.dll, Enable PHP_intl.dll, Enable PHP_opcache.dll
+
+
+7. Open Wireshark and filter for ICMP traffic only
+
 </p>
 <br />
 
 <p>
-<img src="https://i.imgur.com/wVSvcC6.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://imgur.com/P1ZcQuW.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-8. Rename File To OST-Config.PHP And Assign Permissions To File.
+8. Retrieve the private IP address of the Ubuntu VM and attempt to ping it from within the Windows 10 VM. Observe your ping requests and replies within Wireshark.
 </p>
 <br />
 
 <p>
-<img src="https://i.imgur.com/U0zZqC1.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://imgur.com/TTstJ26.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
-<p>
-9. Continue Setting Up OsTicket In Browser.
-  -Name Help Desk
-  -Add Default Email
+
+
+9. From The Windows 10 VM, open command line or PowerShell and attempt to ping a public website (such as www.google.com) and observe the traffic in WireShark.
+
+
 </p>
 <br />
 
 <p>
-<img src="https://i.imgur.com/IdTzZWd.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://imgur.com/e2HbX69.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
-<p>
-10. Download And Install HeidiSQL.
-</p>
-<br />
+
+10.Initiate a perpetual/non-stop ping from your Windows 10 VM to your Ubuntu VM. Try disabling incomming ICMP traffic from the Network Security Group your Ubutu uses.Then, try enabling the traffic oncemore.
+
 
 <p>
-<img src="https://i.imgur.com/0LOpcLJ.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://imgur.com/tPMcOrQ.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
+
+11. Back in Wireshark, filter for SSH traffic only
+
+12. From your Windows 10 VM, “SSH into” your Ubuntu Virtual Machine (via its private IP address)
+Type commands (ls, pwd, etc) into the linux SSH connection and observe SSH traffic spam in WireShark
+Exit the SSH connection by typing ‘exit’ and pressing [Enter].
+
+-SSH traffic commands to try out: pw,ls.
+
+
+13. Back in Wireshark, filter for DHCP traffic only. Observe the DHCP traffic appearing in Wireshark.
+
+14. From your Windows 10 VM, attempt to issue your VM a new IP address from the command line (ipconfig /renew). Observe the DHCP traffic appearing in Wireshark.
+
+
+
 <p>
-11. OsTicket Is Ready. 
+<img src="https://imgur.com/SuPhxqh.png
+" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
-<br />
+
+
+15. Back in Wireshark, filter for DNS traffic only
+
+
+16. From your Windows 10 VM within a command line, use nslookup to see what google.com and disney.com’s IP addresses are
+
+
+17.Back in Wireshark, filter for RDP traffic only (tcp.port == 3389)
+
+
+18.Oserve the immediate non-stop spam of traffic. This traffic seems to be nonstop because the RDP (protocol) is constantly showing you a live stream from one computer to another, therefor traffic is always being transmitted
+
+
+
+19.Close your Remote Desktop connection
+
+
+20. Delete your resource group and all others resources used in the lab.
+
