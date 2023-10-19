@@ -3,7 +3,7 @@
 </p>
 
 <h1>Microsoft Azure - Azure Computing and Networking </h1>
-This tutorial outlines the process of creating resource groups,virtual networks, network security groups, and subnets in Azure. <br />
+This tutorial outlines the process of creating resource groups, virtual networks, network security groups, and subnets in Azure. <br />
 
 
 <h2>Environments and Technologies Used</h2>
@@ -35,7 +35,7 @@ https://clipchamp.com/watch/Wn8LPzyR6YQ
 <img src = "https://imgur.com/mCtRKHz.png" " height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
  <p>
-1. Create a resource group in Azure. Mine is called "network-group".
+1. Create a resource group in Azure. Mine is called "network group".
 </p>                                                                                                 
                                                                                                      
 <p>
@@ -56,7 +56,7 @@ https://clipchamp.com/watch/Wn8LPzyR6YQ
 </p>
 
 <p>
-3.Create a Linux Ubuntu VM. While creating the VM, select the previously created resource group and vnet.
+3. Create a Linux Ubuntu VM. While creating the VM, select the previously created resource group and vnet.
 
 
 <p>
@@ -89,7 +89,7 @@ https://clipchamp.com/watch/Wn8LPzyR6YQ
 <img src="https://imgur.com/ftWznpL.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-6.Within your Windows 10 Virtual Machine, Install Wireshark
+6. Within your Windows 10 Virtual Machine, Install Wireshark
 
 </p>
 <br />
@@ -117,7 +117,7 @@ https://clipchamp.com/watch/Wn8LPzyR6YQ
 </p>
 
 
-9. From The Windows 10 VM, open command line or PowerShell and attempt to ping a public website (such as www.google.com) and observe the traffic in WireShark.
+9. From The Windows 10 VM, open the command line or PowerShell and attempt to ping a public website (such as www.google.com) and observe the traffic in Wireshark.
 
 
 </p>
@@ -127,7 +127,7 @@ https://clipchamp.com/watch/Wn8LPzyR6YQ
 <img src="https://imgur.com/e2HbX69.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 
-10.Initiate a perpetual/non-stop ping from your Windows 10 VM to your Ubuntu VM. Try disabling incomming ICMP traffic from the Network Security Group your Ubutu uses.Then, try enabling the traffic oncemore.
+10. Initiate a perpetual/non-stop ping from your Windows 10 VM to your Ubuntu VM. Try disabling incoming ICMP traffic from the Network Security Group your Ubuntu uses. Then, try enabling the traffic once more.
 
 
 <p>
@@ -176,8 +176,8 @@ Exit the SSH connection by typing ‘exit’ and pressing [Enter].
 17.Back in Wireshark, filter for RDP traffic only (tcp.port == 3389)
 
 
-18.Observe the immediate non-stop spam of traffic. This traffic seems to be nonstop because the RDP (protocol) is constantly showing you a live stream from one computer to another, therefor traffic is always being transmitted
+18. Observe the immediate non-stop spam of traffic. This traffic seems to be nonstop because the RDP (protocol) is constantly showing you a live stream from one computer to another, therefore traffic is always being transmitted
 
 
-19. Close your Remote Desktop and delete your resource group and all others resources used in the lab.
+19. Close your Remote Desktop and delete your resource group and all other resources used in the lab.
 
