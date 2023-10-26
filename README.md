@@ -39,7 +39,7 @@ https://clipchamp.com/watch/Wn8LPzyR6YQ
 </p>                                                                                                 
                                                                                                      
 <p>
-<img src= "https://imgur.com/SKRHp7D.png" " height="80%" width="80%" alt="Disk Sanitization Steps" />
+<img src= "https://imgur.com/SKRHp7D.png" " height="80%" width="80%" />
 </p>
 
 <p>
